@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB_PAGE2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="mainstle.css">
+</head>
+
+<body class="bg">
+    <div class="container">
+        <div class="jumbotron">
+            <marquee direction="left" hight="200px" id="mq">We are the best product based company</marquee>
+
+            <h1> Enter your details for submit</h1>
+
+            <form id="myfrm" class="form" action="myphp.php" method="post">
+                <div class="fnt" id="fnt1">
+                    <div class="form-group ">
+                        <label for="name">Email_id or Phone_number</label>
+                        <input type="text" id="username" name="username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required pattern=".{5,10}" title="Password should be within 5 to 10 and special char lik @,#">
+                    </div>
+                    <input type="submit" value="Sign-UP" name="submit" id="submit" class="btn btn-success">For open your profile page
+
+                </div>
+
+            </form>
+            <div class="popup1" id="popup-2">
+                <div class="overlay1"></div>
+                <div class="content1">
+
+                    <!-- for closing boutn html entity is &times-->
+                    <div class="close-btn" onclick="togglePopup1()">&times; </div>
+
+                    <form action="#" class="frm1" method="POST">
+
+                        <h4 id="rg2">If alredy register then click here</h4>
+
+
+                        <div class="form-group">
+                            <label for="email" id="eml">Email Id or Phone_No </label>
+                            <input type="#" name="emali" class="form-control" placeholder="Email Id or Phone_No" required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pswrd" id="psd">Password</label>
+                            <input type="password" name="pswrd" class="form-control" placeholder="Password" required>
+
+                        </div>
+                        <input type="submit" value="Log-IN" name="submit1" id="submit1 bt1" class="btn btn-success">
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="mainjava.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js">
+        $(document).ready(function() {
+            var form = $('#myfrm');
+            $('#submit').click(function() {
+                $.ajax({
+                    url: form.attr("action"),
+                    type: 'post',
+                    data: $("#myfrm input").serialize(),
+
+                    success: function(data) {
+                        console.log(data);
+                    }
+                })
+
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+.jumbotron {
+  background-color: #88aab5;
+}
+
+.bg {
+  background-color: #c5995e;
+}
+
+.container {
+  background-color: rgba(32, 165, 165, 0.767);
+}
+
+.fnt {
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 0.5rem;
+  padding-bottom: 5%;
+  color: darkslategrey;
+}
+
+h1 {
+  padding-bottom: 5%;
+  font-size: 300px;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 0.5rem;
+  text-align: center;
+}
+
+.btn {
+  font-size: xx-large;
+  border-radius: 30%;
+  text-align: center;
+  border: 2rem;
+  color: black;
+}
+
+#mq {
+  font-size: 5rem;
+  font-family: "Times New Roman", Times, serif;
+  color: rgba(32, 165, 165, 0.767);
+}/*# sourceMappingURL=mainstle.css.map */

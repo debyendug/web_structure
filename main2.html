@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main2.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron edit1">
+            <!-- <div class="topbar">
+                <a href="#">contact</a>
+                <a href="#">profile</a>
+                <a href="#">email</a>
+            </div> -->
+            <h2>Well Come to your profile</h2>
+            <h4>Take 2minits too complete your profile</h4>
+
+
+
+            <form action="main2php.php" method="post" id="main2" enctype="multipart/form-data">
+                <div class="edit">
+                    <div class="form-group">
+                        <label for="name">Enter your Full name</label>
+                        <input type="text" name="name" id="fullname" class="form-control" placeholder="Full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Enter Phone Number</label>
+                        <input type="phone" name="phno" id="phonenumber" class="form-control" placeholder="Phone_number" required pattern="[6-9]{1}[0-9]{9}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Enter your Email Id</label>
+                        <input type="email" name="email" class="form-control" id="mailid" placeholder="email id" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Select gender</label>
+
+                        <select name="gender" id="gd">  
+                        <option value="">Select any one </option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Enter your Full address</label><br>
+                        <!-- <input type="textarea" name="address" class="form-control" placeholder="Full address" required> -->
+                        <textarea name="textarea" rows="5" cols="15" placeholder="Enter your full address" id="txt" class="form-control"></textarea>
+                    </div>
+
+                    <!-- <div class="form-group">
+                    <label for="file">Enter your photo name</label>
+                    <input type="file" name="UploadImage" id="mg" accept="Image/*">
+
+                </div> -->
+
+                </div>
+
+
+
+                <button type="submit" class="btn btn-success" id="submit" name="submit">Click Me</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js">
+        $(document).ready(function() {
+            var form = $('#main2');
+            $('#submit').click(function() {
+                $.ajax({
+                    url: form.attr("action"),
+                    type: 'post',
+                    data: $("#main2 input").serialize(),
+
+                    success: function(data, status) {
+                        // console.log(data);
+                        readRecords();
+
+
+                    }
+                })
+
+            });
+        });
+    </script>
+</body>
+
+</html>

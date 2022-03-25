@@ -1,0 +1,49 @@
+$color: rgba(32, 165, 165, 0.767);
+$bckclr: rgb(136, 170, 181);
+$cnt: center;
+$size: 5rem;
+@mixin fntt {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.5rem;
+    padding-bottom: 5%;
+    color: darkslategrey;
+}
+
+.jumbotron {
+    background-color: $bckclr;
+}
+
+.bg {
+    background-color: rgb(197, 153, 94);
+}
+
+.container {
+    background-color: $color;
+}
+
+.fnt {
+    @include fntt();
+}
+
+h1 {
+    padding-bottom: 5%;
+    font-size: 300px;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 00.5rem;
+    text-align: $cnt;
+}
+
+.btn {
+    font-size: xx-large;
+    border-radius: 30%;
+    text-align: center;
+    border: 2rem;
+    color: black;
+}
+
+#mq {
+    font-size: $size;
+    font-family: 'Times New Roman', Times, serif;
+    color: $color;
+}
